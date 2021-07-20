@@ -9,12 +9,21 @@ namespace sortingFiles
         static void Main(string[] args)
         {
             if(args.Length == 0){
-            Console.WriteLine("Enter a folder to sort: ");
-            string inp = Console.ReadLine(); 
-            sort(inp);
-            }
-            else{
-                sort(args[0]);
+                Console.WriteLine("Enter a folder to sort: ");
+                string inp = Console.ReadLine(); 
+                if(!Directory.Exists(inp))
+                {
+                    Console.WriteLine("Enter a valid folder");
+                } else {
+                    sort(args[0]);
+                }
+            } else {
+                if(!Directory.Exists(args[0]))
+                {
+                    Console.WriteLine("Enter a valid folder");
+                } else {
+                    sort(args[0]);
+                }
             }
 
         }
