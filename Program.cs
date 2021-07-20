@@ -8,9 +8,15 @@ namespace sortingFiles
     {
         static void Main(string[] args)
         {
+            if(args.Length == 0){
             Console.WriteLine("Enter a folder to sort: ");
-            string inp = Console.ReadLine();
+            string inp = Console.ReadLine(); 
             sort(inp);
+            }
+            else{
+                sort(args[0]);
+            }
+
         }
         static List<string> getFolderFiles(string folderPath)
         {
